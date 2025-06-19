@@ -1,0 +1,207 @@
+/* lets assume width>=320xp && height>=480px */
+
+#searchBar{
+    position: absolute;
+    top: calc(100vh - 30px);
+    left: 0;
+    height: 30px;
+    width: 100vw;
+    z-index: 1;
+    background-color: rgba(128,128,128,0.8);
+}
+
+#menuButton{
+    background-image: url("./assets/icon.png");
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    left: 5px;
+    height: 30px;
+    width: 30px;
+    opacity: 1;
+    z-index: 2;
+    transform: rotate(-90deg);
+} #menuButton:hover{
+    background-color: grey;
+}
+#menu {
+  position: absolute;
+  top: 300px; /* Start off-screen (inside container's coordinate space) */
+  left: 0;
+  height: 270px;
+  width: 200px;
+  background-color:rgba(128,128,128,0.7);
+  transition: top 0.5s ease;
+  z-index: 3;
+  pointer-events: all;
+}
+#menuContainer{
+position: absolute;
+  top: -270px; /* This places the container in view */
+  left: 0;
+  height: 270px; /* 300px - 30px */
+  width: 200px;
+  overflow: hidden; /* Hides any child overflow */
+  z-index: 0;
+  pointer-events: none;
+}.menuItem{
+    position: absolute;
+    top: var(--top);
+    left: var(--left);
+    height: var(--height);
+    width: var(--width);
+   z-index: 4;
+   border: 1px solid transparent;
+}.menuItem:hover{
+    border: 1px rgba(211, 211, 211, 0.5) solid;
+    background: radial-gradient(circle at 10% 50%, rgba(211,211,211,0.6),rgba(128,128,128,0.4));
+}.menuItemIcon{
+    position: absolute;
+    background-size: cover;
+    top: 3px;
+    left: 3px;
+    height: 34px;
+    width: 34px;
+    z-index: 5;
+    opacity: 1;
+}.menuItemLabel{
+    position: absolute;
+    background-size: cover;
+    top: 0px;
+    left: 45px;
+    height: 40px;
+    width: 115px;
+    z-index: 5;
+    opacity: 1;
+    text-align:left;
+    color: white;
+    font-family: "Segoe UI", system-ui, "Roboto", "Helvetica Neue", sans-serif;
+    font-size: 13px;
+    text-shadow: 0px 2px 2px black;
+    display:flex;
+    align-items: center;
+}
+
+
+
+#searchMenuButton{
+    background-image: url("./assets/icon.png");
+    background-size: cover;
+    position: absolute;
+    top: calc(100vh - 30px);
+    left: 45px;
+    height: 30px;
+    width: 30px;
+    opacity: 1;
+    z-index: 2;
+    transform: rotate(-90deg);
+} #searchMenuButton:hover{
+    background-color: grey;
+}
+#searchMenu {
+  position: absolute;
+  top: 300px; /* Start off-screen (inside container's coordinate space) */
+  left: 0px;
+  height: 270px;
+  width: 260px;
+  background-color:rgba(128,128,128,0.7);
+  transition: top 0.5s ease;
+  z-index: 3;
+  pointer-events: all;
+}
+#searchMenuContainer{
+position: absolute;
+  top: calc(100vh - 300px); /* This places the container in view */
+  left: 45px;
+  height: 270px; /* 300px - 30px */
+  width: 260px;
+  overflow: hidden; /* Hides any child overflow */
+  z-index: 1;
+  pointer-events: none;
+}
+
+
+#background{
+    background-image: url("./assets/carinaBackground.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(0, 236, 253);
+    opacity: 1;
+    z-index: -1;
+}
+
+
+
+
+.iconBase{
+    position: absolute;
+    top: var(--top);
+    left: var(--left);
+    height: var(--height);
+    width: var(--width);
+    background-color: transparent;
+    z-index: 0;
+}
+.icon{
+    position: absolute;
+    top: var(--top);
+    left: var(--left);
+    height: var(--height);
+    width: var(--width);
+    background-color: transparent;
+    z-index: 1;
+    
+}.icon:hover {
+    background-color: grey;
+    opacity: 0.5;
+    outline: 1px solid lightgray
+}
+.icon.selected {
+  background-color: rgb(209, 228, 247);
+  opacity: 0.5;
+  outline: 1px solid lightgray;
+}
+.iconImg{
+    position: absolute;
+    top: var(--top);
+    left: var(--left);
+    height: var(--height);
+    width: var(--width);
+    z-index: 2;
+    pointer-events: none;
+    background-color:transparent;
+    opacity: 1;
+    outline: none ; 
+}.iconName{
+    position: absolute;
+    top: var(--top);
+    left: var(--left);
+    height: var(--height);
+    width: var(--width);
+    z-index: 2;
+    pointer-events: none;
+    color: white;
+    font-family: "Segoe UI", system-ui, "Roboto", "Helvetica Neue", sans-serif;
+    font-size: 13px;
+    text-align: center;
+    text-shadow: 0px 2px 2px black;
+}
+
+
+
+
+
+.not-selectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
