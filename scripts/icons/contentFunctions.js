@@ -21,12 +21,18 @@ export function video(url){
 }
 
 export function hyperLink(windowName, iconPath ,windowId, url){
+    let browserErrorDiv = document.createElement("div") 
+    browserErrorDiv.className = "browserErrorDiv"
+    browserErrorDiv.textContent = "sadly no infinite recursion for you"
+    
+
     let pdfIconPath = iconPath
     let canvas = displayWindow.create(windowId, windowName, pdfIconPath)
-
 
     let miniBrowser = document.createElement("iframe")
     miniBrowser.src = url
     miniBrowser.className = "browser"
+
+    canvas.appendChild(browserErrorDiv)
     canvas.appendChild(miniBrowser)
 }
