@@ -21,11 +21,8 @@ export function video(url){
 }
 
 export function hyperLink(windowName, iconPath ,windowId, url){
-    let browserErrorDiv = document.createElement("div") 
-    browserErrorDiv.className = "browserErrorDiv"
-    browserErrorDiv.textContent = "sadly no infinite recursion for you"
-    
 
+    
     let pdfIconPath = iconPath
     let canvas = displayWindow.create(windowId, windowName, pdfIconPath)
 
@@ -33,6 +30,13 @@ export function hyperLink(windowName, iconPath ,windowId, url){
     miniBrowser.src = url
     miniBrowser.className = "browser"
 
-    canvas.appendChild(browserErrorDiv)
+    if (url == "http://rubenvanerp.nl/"){
+        let browserErrorDiv = document.createElement("div") 
+        browserErrorDiv.className = "browserErrorDiv"
+        browserErrorDiv.textContent = "sadly no infinite recursion for you"
+        canvas.appendChild(browserErrorDiv)
+    }
+
+    
     canvas.appendChild(miniBrowser)
 }
