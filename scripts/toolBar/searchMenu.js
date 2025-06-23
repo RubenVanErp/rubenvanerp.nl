@@ -6,13 +6,13 @@ export function create(){
     addEventListener("click", closeSearchMenu, true)
     searcnMenuButton.addEventListener("click", toggleSearchMenu)
 
-    document.body.appendChild(searcnMenuButton)
+    document.getElementById("searchBar").appendChild(searcnMenuButton)
 
 
     let searchMenuContainer = document.createElement("div")
     searchMenuContainer.id = "searchMenuContainer"
     searchMenuContainer.className = "not-selectable"
-    document.body.appendChild(searchMenuContainer)
+    document.getElementById("searchBar").appendChild(searchMenuContainer)
 
 
     let searchMenu = document.createElement("div")

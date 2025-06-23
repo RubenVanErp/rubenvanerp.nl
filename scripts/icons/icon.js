@@ -1,3 +1,8 @@
+let allIconsContainer = document.createElement("div")
+allIconsContainer.id = 'icons'
+allIconsContainer.className = "icons"
+document.body.appendChild(allIconsContainer)
+
 addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
         event.preventDefault();}
@@ -5,7 +10,7 @@ addEventListener("keypress", function(event) {
 })
 addEventListener("click",unselectAllFields, true)
 
-export function create(id, top, left, iconImgPath, iconNameText){
+export function create(id, top, left, iconImgPath, iconNameText, contentFunction, contentFunctionArgs){
     let iconBase = document.createElement("div")
     iconBase.id = id + "Base"
     iconBase.className = "iconBase not-selectable"
@@ -24,8 +29,10 @@ export function create(id, top, left, iconImgPath, iconNameText){
     icon.style.setProperty("--width", 70 + "px")
     icon.style.setProperty("--height", 70 + "px")
 
-    icon.addEventListener("click", selectField)
-    icon.addEventListener("dblclick", openIcon)
+    icon.addEventListener("click", selectField) 
+    icon.contentFunction = contentFunction
+    icon.contentFunctionArgs = contentFunctionArgs
+    icon.addEventListener("dblclick",  openIcon)
 
 
     let iconImg = document.createElement("img")
@@ -46,7 +53,7 @@ export function create(id, top, left, iconImgPath, iconNameText){
     iconName.style.setProperty("--width", "60px")
     iconName.style.setProperty("--height",  "auto")
 
-    document.body.appendChild(iconBase)
+    allIconsContainer.appendChild(iconBase)
     iconBase.appendChild(icon)
     iconBase.appendChild(iconImg)
     iconBase.appendChild(iconName)
@@ -86,5 +93,5 @@ function openIcons(){
 
 
 function openIcon(){
-    console.log(this.id)
+    this.contentFunction(...this.contentFunctionArgs)
 }

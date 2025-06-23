@@ -34,7 +34,7 @@ function createMenuButton(id, order, text, iconPath, action){
     menuItem.style.setProperty("--top", 0 + order * 40 + "px")
     menuItem.style.setProperty("--left", 40 + "px")
     menuItem.style.setProperty("--height", 40 + "px")
-    menuItem.style.setProperty("--width", 158 + "px")
+    menuItem.style.setProperty("--width", 157 + "px")
 
     menuItem.addEventListener("click", action)
     menuItem.addEventListener("mousedown", () => {
