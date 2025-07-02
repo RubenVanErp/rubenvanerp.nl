@@ -1,23 +1,19 @@
 import * as displayWindow from "./displayWindow.js"
 
-export function pdf(documentPath, windowName, windowId){
-    let pdfIconPath = "assets/pdfIcon.png" //to be replaced
-    let canvas = displayWindow.create(windowId, windowName, pdfIconPath)
+
+export function file(location, windowId){
+    
+    let documentPath = getStringPath(location)
+
+    let pdfIconPath = "files/this_pc/photos/pdfIcon.png"
+    let canvas = displayWindow.create(windowId, documentPath.slice(documentPath.lastIndexOf("\/")+1), pdfIconPath)
 
     let pdfView = document.createElement("embed")
-    pdfView.id = windowId + "Pdf"
+    pdfView.id = windowId + "File"
     pdfView.className = "pdf"
     pdfView.src = documentPath
 
     canvas.appendChild(pdfView)
-}
-
-export function latexFile(documentPath){
-
-}
-
-export function video(url){
-
 }
 
 export function hyperLink(windowName, iconPath ,windowId, url){
@@ -39,4 +35,13 @@ export function hyperLink(windowName, iconPath ,windowId, url){
 
     
     canvas.appendChild(miniBrowser)
+}
+
+
+export function getStringPath(location){
+    let stringPath = "files"
+    for (let i = 0; i<location.length; i++ ){
+        stringPath += "/" + location[i]
+    }
+    return stringPath
 }

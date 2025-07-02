@@ -126,6 +126,7 @@ export function create(id, name, iconPath){
     canvas.className = " canvas not-selectable"
     windowContainer.appendChild(canvas)
 
+    bringToFront(windowContainer)
     return canvas
 }
 

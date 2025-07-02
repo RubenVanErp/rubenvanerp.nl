@@ -12,7 +12,7 @@
 }
 
 #menuButton{
-    background-image: url("./assets/icon.png");
+    background-image: url("./files/this_pc/photos/icon.png");
     background-size: cover;
     position: absolute;
     top: 0px;
@@ -93,7 +93,7 @@ position: absolute;
 
 
 #searchMenuButton{
-    background-image: url("./assets/icon.png");
+    background-image: url("./files/this_pc/photos/icon.png");
     background-size: cover;
     position: absolute;
     top: 0px;
@@ -136,7 +136,6 @@ position: absolute;
 
 
 #background{
-    background-image: url("./assets/carinaBackground.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -222,7 +221,7 @@ position: absolute;
     left: calc(20vw + var(--windowCount));
     background-color: transparent;
     resize: both;
-    overflow: auto;
+    overflow: hidden;
     border: 1px solid rgba(255,255,255,0.19);
     border-radius: 10px;
     backdrop-filter: blur(3px);
@@ -285,6 +284,7 @@ position: absolute;
 .windowIcon{
     position: absolute;
     background-size: cover;
+    background-repeat: no-repeat;
     top: 2px;
     left: 7px;
     width: 20px;
@@ -315,6 +315,7 @@ position: absolute;
     width: 100%;
     height: calc(100% - 25px);
     background:radial-gradient(circle at -10% 10%, rgba(40, 96, 94, 0.3), rgba(72, 48, 79, 0.3));
+    overflow: auto;
 }
 .browser{
     position: absolute;
@@ -355,6 +356,86 @@ position: absolute;
   background: transparent;
   pointer-events: auto;
 }
+
+
+
+
+.fileExplorerSideBar{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100px;
+}.fileExplorerSideBarBackground{
+    position: fixed;
+    top: 25px;
+    left: 0px;
+    height: 100%;
+    width: 100px;
+    background-color: rgba(255,255,255,0.3);
+}.fileExplorerSideBarMenuText{
+    position: absolute;
+    top: var(--top);
+    left: 10px;
+    height: var(--height);;
+    width: calc(100% - 20px);
+    color: rgb(183, 183, 183);
+    text-shadow: 1px 1px 3px black;
+    font-size: 12px;
+    font-family: "Segoe UI", system-ui, "Roboto", "Helvetica Neue", sans-serif;
+    white-space:pre-wrap;
+}.fileExplorerSideBarMenuItem{
+    position: absolute;
+    top: var(--top);
+    left: 5px;
+    height: var(--height);;
+    width: calc(100% - 10px);
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 3px black;
+    font-size: 15px;
+    display: flex;
+    justify-content: left;  /* horizontal centering */
+    align-items: center;   
+    font-family: "Segoe UI", system-ui, "Roboto", "Helvetica Neue", sans-serif;
+    white-space:pre-wrap;
+    border-radius: 10px;
+    border: 1px rgba(211, 211, 211, 0) solid;
+}.fileExplorerSideBarMenuItem:hover{
+    border: 1px rgba(211, 211, 211, 0.9) solid;
+    background: radial-gradient(circle at 10% 50%, rgba(211,211,211,0.6),rgba(128,128,128,0.4));
+}.fileExplorerStagingArea{
+    position: absolute;
+    top: 0px;
+    left: 100px;
+    height: 100%;
+    width: calc(100% - 100px);
+}.fileExplorerStagingAreaItem{
+    position: absolute;
+    top: var(--top);
+    left: 10px;
+    width: calc(100% - 20px);
+    height: 25px;
+    overflow: hidden;
+    border-radius: 15px;
+
+}.fileExplorerStagingAreaItem:hover{
+    background: radial-gradient(circle at -10% 10%, rgba(255, 255, 255, 0.321), hsla(288, 46%, 37%, 0.129));;
+}.fileExplorerStagingAreaItemText{
+    position: absolute;
+    top: 0px;
+    left: 40px;
+    height: 25px;
+    width: 100px;
+    font-size: 16px;
+    color: white;
+    display: flex;
+    justify-content: left;  /* horizontal centering */
+    align-items: center;   
+    font-family: "Segoe UI", system-ui, "Roboto", "Helvetica Neue", sans-serif;
+}
+
+
+
 
 .not-selectable {
     -webkit-touch-callout: none;

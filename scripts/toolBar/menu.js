@@ -19,11 +19,11 @@ export function create(){
     menuContainer.appendChild(menu)
     document.body.style.overflow = 'hidden';
 
-    createMenuButton("test1MenuButton", 0, "Downloads", "./assets/icon.png", openMenu)
-    createMenuButton("test1MenuButton", 1, "Documents", "./assets/icon.png", openMenu)
-    createMenuButton("test1MenuButton", 2, "Videos", "./assets/icon.png", openMenu)
-    createMenuButton("test1MenuButton", 3, "Photos", "./assets/icon.png", openMenu)
-    createMenuButton("test1MenuButton", 4, "My PC", "./assets/icon.png", openMenu)
+    createMenuButton("test1MenuButton", 0, "Downloads", "./files/this_pc/photos/icon.png", openMenu)
+    createMenuButton("test1MenuButton", 1, "Documents", "./files/this_pc/photos/icon.png", openMenu)
+    createMenuButton("test1MenuButton", 2, "Videos", "./files/this_pc/photos/icon.png", openMenu)
+    createMenuButton("test1MenuButton", 3, "Photos", "./files/this_pc/photos/icon.png", openMenu)
+    createMenuButton("test1MenuButton", 4, "My PC", "./files/this_pc/photos/icon.png", openMenu)
 }
 
     
